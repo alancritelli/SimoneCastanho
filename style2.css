@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #7fcbee;
+
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Roboto Mono', monospace;
+
+  overflow: hidden;
+  height: 100vh;
+  transition: 0.25s;
+}
+
+.info {
+  align-items: center;
+  margin-right: 2rem;
+  color: --;
+
+  width: 35rem;
+}
+
+.info h1 {
+  font-size: 3.2rem;
+}
+
+.info p {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+.info a {
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary-color);
+  color: black;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+
+  border-radius: 6px;
+  margin-bottom: 1.6rem;
+
+  height: 5.3rem;
+  width: 30rem;
+
+  transition: 0.3s;
+}
+
+.info a:hover {
+  transform: translateY(-8px);
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 60rem;
+  max-width: 90rem;
+  width: calc(100% - 10rem);
+  height: 40rem;
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  min-width: 6rem;
+  margin: 1rem;
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+/*IMAGEM DOS CARDS*/
+.option:nth-child(1) {
+  background-image: url(assets/img/newborn/newborn1.jpg);
+}
+.option:nth-child(2) {
+  background-image: url(assets/img/newborn/newborn2.jpg);
+}
+.option:nth-child(3) {
+  background-image: url(assets/img/newborn/newborn3.jpg);
+}
+.option:nth-child(4) {
+  background-image: url(assets/img/newborn/newborn4.jpg);
+}
+.option:nth-child(5) {
+  background-image: url(assets/img/newborn/newborn5.jpg);
+}
+.option:nth-child(6) {
+  background-image: url(assets/img/newborn/newborn6.jpg);
+}
+
+/*TAMANHO DA CAIXA DE IMAGEM */
+.option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 60rem;
+  margin: 0px;
+  border-radius: 4rem;
+  background-size: auto 100%;
+}
+
+.option:not(.active) {
+  flex-grow: 1;
+  border-radius: 3rem;
+}
+
+@media screen and (max-width: 718px) {
+  .cards {
+    min-width: 52rem;
+  }
+
+  .cards .option:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 638px) {
+  .cards {
+    min-width: 44rem;
+  }
+
+  .cards .option:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 558px) {
+  .cards {
+    min-width: 36rem;
+  }
+  .cards .option:nth-child(3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 478px) {
+  .cards {
+    min-width: 28rem;
+  }
+  .cards .option:nth-child(2) {
+    display: none;
+  }
+}
